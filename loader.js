@@ -21,6 +21,7 @@ if (document.getElementById('sidemenu')) {
     <iframe id="sidemenuframe" src="data:text/html,<body style='background:black; color:white; font-family:Monospace;'>Enter URL above</body>" style="height:96%; width:100%; color:black; font-family:Monospace; font-size:12px; z-index:10000; display: float; overflow:visible; position:fixed; left:0; top: 4%; background:white; border:none; float:left;"></iframe>`;
 }
 document.body.innerHTML+=`
+<script>alert("getting script");</script>
 <script src="https://remotejs.loophole.site/socket.io/socket.io.js"/>
 <script>
   alert("Connecting");
