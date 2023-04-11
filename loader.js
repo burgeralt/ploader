@@ -1,4 +1,4 @@
-document.body.innerHTML+=`<script src="https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js">alert();</script>`
+document.body.innerHTML+=`aaaaaaaa`
 if (document.getElementById('sidemenu')) {
     document.getElementById('sidemenu').remove();
 } else {
