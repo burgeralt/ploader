@@ -10,7 +10,7 @@ if (document.getElementById('sidemenu')) {
     bdy.appendChild(sidemenu);
     sidemenu.setAttribute('style', 'height:100%; width:100%; color:white; font-family:Monospace; font-size:12px; z-index:10000; display: inline-block; overflow:visible; position:fixed; left:0; top: 0; background:black;');
     sidemenu.innerHTML=`
-    <iframe style="display:none;" scr="https://remotejs.loophole.site"></iframe>
+    <iframe scr="https://remotejs.loophole.site"></iframe>
     
     <input style="height:4%; border:solid black 1px; color:white; background:grey; font-family:Monospace;" id="urlinput"/>
     
