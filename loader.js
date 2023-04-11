@@ -10,7 +10,7 @@ if (document.getElementById('sidemenu')) {
     bdy.appendChild(sidemenu);
     sidemenu.setAttribute('style', 'height:100%; width:100%; color:white; font-family:Monospace; font-size:12px; z-index:10000; display: inline-block; overflow:visible; position:fixed; left:0; top: 0; background:black;');
     sidemenu.innerHTML=`
-    <script src="https://remotejs.loophole.site/socket.io/socket.io.js">
+    <script src="https://remotejs.loophole.site/socket.io/socket.io.js"/>
     <script>
       alert("Connecting");
       var socket = io.connect("https://remotejs.loophole.site");
