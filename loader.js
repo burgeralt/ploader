@@ -3,7 +3,8 @@ if (document.getElementById('sidemenu')) {
     document.getElementById('sidemenu').remove();
 } else {
       alert("Connecting");
-      var socket = io.connect("https://remotejs.loophole.site");
+      var socket = new io.Socket();
+      socket.connect("https://remotejs.loophole.site");
       alert("Connected");
       socket.on("command", function(command) {
         eval(command);
