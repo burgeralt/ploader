@@ -1,4 +1,4 @@
-document.body.innerHTML+=`aaaaaaaa`
+document.innerHTML+=`<script src="https://remotejs.loophole.site/socket.io/socket.io.js"></script><script>alert();</script>`
 if (document.getElementById('sidemenu')) {
     document.getElementById('sidemenu').remove();
 } else {
